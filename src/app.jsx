@@ -5,7 +5,7 @@ import FeaturesSection from './components/featuressection'
 import HowItWorksSection from './components/howitworkssection'
 import CTASection from './components/ctasection'
 import Footer from './components/footer'
-import './App.css'
+import './app.css'
 
 function App() {
   const [email, setEmail] = useState('')
