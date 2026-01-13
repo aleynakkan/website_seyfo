@@ -1,0 +1,154 @@
+.footer {
+  background-color: #fef8f4;
+  padding: 80px 0 40px;
+  border-top: 1px solid var(--color-gray);
+}
+
+.container {
+  max-width: 1728px;
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.columnTitle {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  margin-bottom: 5px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links a {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--color-primary);
+}
+
+.staticText {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.contactLink {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  color: #f06151;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-white);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.bottom {
+  text-align: center;
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-gray);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .column {
+    gap: var(--space-md);
+  }
+
+  .columnTitle {
+    font-size: 14px;
+  }
+
+  .links a,
+  .staticText,
+  .label {
+    font-size: 13px;
+  }
+
+  .contactLink {
+    font-size: 13px;
+  }
+}
