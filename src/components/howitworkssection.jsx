@@ -1,4 +1,4 @@
-import styles from './HowItWorksSection.module.css'
+import styles from './howitworkssection.module.css'
 
 // Image assets from Figma
 const imgFrame1 = "https://www.figma.com/api/mcp/asset/3c22d660-04cd-4d42-ac19-85ca3f0d35b6";

@@ -1,4 +1,4 @@
-import styles from './FeaturesSection.module.css'
+import styles from './featuressection.module.css'
 
 // Image assets from Figma
 const imgVector1 = "https://www.figma.com/api/mcp/asset/3ed4623f-8656-4842-9c50-d1de1d08c822";

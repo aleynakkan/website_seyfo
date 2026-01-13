@@ -1,4 +1,4 @@
-import styles from './CTASection.module.css'
+import styles from './ctasection.module.css'
 
 const CTASection = ({ email, setEmail, onSubmit }) => {
   return (

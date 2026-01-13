@@ -1,4 +1,4 @@
-import styles from './HeroSection.module.css'
+import styles from './heroSection.module.css'
 
 // Image assets from Figma
 const imgImage12 = "https://www.figma.com/api/mcp/asset/296947a2-a387-4bb4-9981-c98b4d190980";

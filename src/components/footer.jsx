@@ -1,4 +1,4 @@
-import styles from './Footer.module.css'
+import styles from './footer.module.css'
 
 // Social media icons from Figma
 const imgFacebook = "https://www.figma.com/api/mcp/asset/ab26929c-6893-4497-9bd8-8f4d0fbf7310";
