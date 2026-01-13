@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import FeaturesSection from './components/FeaturesSection'
-import HowItWorksSection from './components/HowItWorksSection'
-import CTASection from './components/CTASection'
-import Footer from './components/Footer'
+import Navbar from './components/navbar'
+import HeroSection from './components/herosection'
+import FeaturesSection from './components/featuressection'
+import HowItWorksSection from './components/howitworkssection'
+import CTASection from './components/ctasection'
+import Footer from './components/footer'
 import './App.css'
 
 function App() {
