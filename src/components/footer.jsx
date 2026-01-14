@@ -7,7 +7,14 @@ const imgInstagram = "https://www.figma.com/api/mcp/asset/4ce5a173-2369-4c40-b97
 const imgLinkedin = "https://www.figma.com/api/mcp/asset/1cb0a090-0f43-4cfd-8c9d-2462092cee9b";
 const imgYoutube = "https://www.figma.com/api/mcp/asset/36efb62d-a6bd-40ed-a826-45ffd1a6e148";
 
-const Footer = () => {
+const Footer = ({ onNavigate }) => {
+  const handleClick = (e, page) => {
+    e.preventDefault()
+    if (page) {
+      onNavigate(page)
+    }
+  }
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -16,8 +23,8 @@ const Footer = () => {
           <div className={styles.column}>
             <h4 className={styles.columnTitle}>Seyfo</h4>
             <ul className={styles.links}>
-              <li><a href="#about">Hakkımızda</a></li>
-              <li><a href="#contact">İletişim</a></li>
+              <li><a href="#" onClick={(e) => handleClick(e, 'home')}>Hakkımızda</a></li>
+              <li><a href="#" onClick={(e) => handleClick(e, 'contact')}>İletişim</a></li>
               <li><a href="#privacy">Çevre Politikası</a></li>
               <li><a href="#social">Sosyal Politika</a></li>
               <li><a href="#marketplace">Pazaryeri</a></li>

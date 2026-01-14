@@ -75,6 +75,12 @@
   background-color: var(--color-bg-light);
 }
 
+.navItem.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+
 .buttons {
   display: flex;
   gap: var(--space-md);
