@@ -1,6 +1,90 @@
 # Seyfo Website
 
-Seyfo ürünün web sitesi. React ve Vite ile inşa edildi.
+Modern bir finansal yönetim platformu web sitesi - React ve Node.js ile yapılmış.
+
+## Kurulum
+
+### Gereklilikler
+- Node.js 16+
+- npm veya yarn
+
+### 1. Bağımlılıkları Yükleyin
+```bash
+npm install
+```
+
+### 2. Environment Değişkenlerini Ayarlayın
+
+`.env.example` dosyasını `.env` olarak kopyalayın ve ayarları yapın:
+
+```bash
+cp .env.example .env
+```
+
+`.env` dosyasını düzenleyin:
+```
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+EMAIL_TO=iletisim@cfoseyfo.com
+PORT=3000
+NODE_ENV=development
+```
+
+#### Gmail SMTP Ayarları
+1. Google Account'a gidin
+2. Security bölümüne gidin
+3. "App passwords" oluşturun
+4. 16 karakterlik şifreyi `.env` dosyasına ekleyin
+
+### 3. Geliştirme Sunucusunu Başlatın
+
+Terminal 1'de (Frontend - Vite):
+```bash
+npm run dev
+```
+
+Terminal 2'de (Backend - Express):
+```bash
+npm run server
+```
+
+Frontend: `http://localhost:5173`
+Backend: `http://localhost:3000`
+
+### 4. Production Build'i Oluşturun
+```bash
+npm run build
+```
+
+## Email Gönderme
+
+İletişim formundan gönderilen mesajlar:
+1. Admin'e gönderilir: `iletisim@cfoseyfo.com`
+2. Kullanıcıya onay e-postası gönderilir
+
+## API Endpoints
+
+### POST /api/send-email
+Mesaj gönder ve admin + kullanıcıya email yolla
+
+**Request Body:**
+```json
+{
+  "name": "Ad Soyad",
+  "email": "example@email.com",
+  "phone": "+90 (555) 123 45 67",
+  "company": "Şirket Adı",
+  "message": "Mesaj içeriği"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Mesajınız başarıyla gönderildi..."
+}
+```
 
 ## Proje Yapısı
 

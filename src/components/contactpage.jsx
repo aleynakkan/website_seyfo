@@ -21,10 +21,34 @@ export default function ContactPage() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // TODO: Send form to backend
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        alert('Mesajınız başarıyla gönderildi! Kısa sürede sizinle iletişime geçeceğiz.')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: ''
+        })
+      } else {
+        alert('Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
+    }
   }
 
   return (
