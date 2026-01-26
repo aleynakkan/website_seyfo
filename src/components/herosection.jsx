@@ -1,48 +1,42 @@
-import styles from './herosection.module.css'
 
-// Image assets from Figma
-const imgImage12 = "https://www.figma.com/api/mcp/asset/296947a2-a387-4bb4-9981-c98b4d190980";
-const imgEllipse2 = "https://www.figma.com/api/mcp/asset/31c42654-bdbe-4480-a15a-39f1a705ee7e";
-const imgEllipse3 = "https://www.figma.com/api/mcp/asset/13d7d69a-da78-4e6f-9aaf-91d9ecc0d6ba";
+import styles from './herosection.module.css';
+// Yeni Figma assetleri
+const imgScreenshot20260119At121104Pm1 = "https://www.figma.com/api/mcp/asset/634397cd-0803-4d28-bd47-c8075d33ea55";
+const imgGroup = "https://www.figma.com/api/mcp/asset/1795d047-b9ab-4370-9ed9-d7ff87bdab0d";
+const imgGroup1 = "https://www.figma.com/api/mcp/asset/809a4761-914d-4b2d-8e25-38c97229278a";
+const imgGroup2 = "https://www.figma.com/api/mcp/asset/1947d5c2-e4ee-487c-b812-175e065da5f2";
+const imgGroup3 = "https://www.figma.com/api/mcp/asset/8aaf2bc8-d430-45af-b519-4cc5b7642042";
+const imgGroup4 = "https://www.figma.com/api/mcp/asset/becf6320-3673-44dd-9bb6-6284c1b48a39";
+
+
 
 const HeroSection = () => {
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.titleWrapper}>
-            <h1 className={styles.title}>
-              İşletmenizin finansal fotoğrafını
-              <span className={styles.highlight}> </span>
-              <span className={styles.normal}>görün</span>
-            </h1>
-          </div>
-
-          <p className={styles.description}>
-            Seyfo banka hareketlerinizi, gelir–giderlerinizi ve nakit akışınızı otomatik analiz eder. Size her gün "Kasada ne var, ne olacak?" sorusunun cevabını verir.
-          </p>
-
-          <div className={styles.buttons}>
-            <button className={styles.primaryBtn}>Ücretsiz Deneyin</button>
-            <button className={styles.secondaryBtn}>Demo İzle</button>
-          </div>
-        </div>
-
-        <div className={styles.illustration}>
-          <div className={styles.illustrationBg1}></div>
-          <div className={styles.illustrationBg2}></div>
-          <div className={styles.illustrationBg3}></div>
-          <div className={styles.illustrationBg4}></div>
-          <div className={styles.illustrationBg5}></div>
-          <img src={imgEllipse2} alt="decoration 1" className={styles.decoration1} />
-          <img src={imgImage12} alt="hero illustration" className={styles.image} />
-          <img src={imgEllipse3} alt="decoration 2" className={styles.decoration2} />
+    <section className={styles.heroSection}>
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroTitle}>
+          İşletmenizin finansal fotoğrafını <br />
+          <span className={styles.heroTitleAccent}>seyfo</span> ile her gün daha net görün.
+        </h1>
+        <p className={styles.heroDesc}>
+          Seyfo banka hareketlerinizi, gelir–giderlerinizi ve nakit akışınızı otomatik analiz eder. Size her gün “Kasada ne var, ne olacak?” sorusunun cevabını verir.
+        </p>
+        <div className={styles.heroActions}>
+          <button className={styles.tryBtn}>Ücretsiz Deneyin</button>
+          <button className={styles.demoBtn}>Demo İzle</button>
         </div>
       </div>
-
-      <div className={styles.pinkBg}></div>
+      <div className={styles.heroVisuals}>
+        <img src={imgScreenshot20260119At121104Pm1} alt="Seyfo App Screenshot" className={styles.heroImage} />
+        {/* Decorative groups */}
+        <img src={imgGroup} alt="" className={styles.heroDeco1} />
+        <img src={imgGroup1} alt="" className={styles.heroDeco2} />
+        <img src={imgGroup2} alt="" className={styles.heroDeco3} />
+        <img src={imgGroup3} alt="" className={styles.heroDeco4} />
+        <img src={imgGroup4} alt="" className={styles.heroDeco5} />
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

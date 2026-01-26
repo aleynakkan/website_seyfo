@@ -1,54 +1,36 @@
-import styles from './howitworkssection.module.css'
 
-// Image assets from Figma
-const imgFrame1 = "https://www.figma.com/api/mcp/asset/3c22d660-04cd-4d42-ac19-85ca3f0d35b6";
-const imgFrame2 = "https://www.figma.com/api/mcp/asset/b284fd89-7031-456e-8119-91a839eeb2b6";
-const imgScreenshot = "https://www.figma.com/api/mcp/asset/24e55802-9ae5-4a6d-8773-d61497f919d2";
-const imgPlus = "https://www.figma.com/api/mcp/asset/ac3e3b68-3892-447f-8cfd-316c4420ca15";
+import styles from './howitworkssection.module.css';
+// Yeni Figma assetleri
+const imgTheMobilePhoneScreenWithAllActiveBudgetsOverview = "https://www.figma.com/api/mcp/asset/16819fac-7ff0-4cc4-a98f-a4c384917629";
+const imgTheMobilePhoneScreenWithAllFinancialAccountsOverview = "https://www.figma.com/api/mcp/asset/259a45a2-4028-49ba-84bb-c49a21a4d73a";
+const imgTheMobilePhoneScreenWithAllTransactionsOverview = "https://www.figma.com/api/mcp/asset/b10e1e45-fc31-41cc-adb4-942dce640c9d";
+
+
 
 const HowItWorksSection = () => {
-  const steps = [
-    {
-      title: "Banka ekstresi veya e-fatura yükle",
-      description: null,
-    },
-    {
-      title: "CFO Assistant otomatik analiz etsin.",
-      description: null,
-    },
-    {
-      title: "Her gün net tabloyu gör.",
-      description: null,
-    },
-  ]
-
   return (
-    <section className={styles.howItWorks}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Seyfo nasıl çalışır?</h2>
-
-        <div className={styles.stepsContainer}>
-          {steps.map((step, index) => (
-            <div key={index} className={styles.stepColumn}>
-              <div className={styles.stepCard}>
-                <h3 className={styles.stepTitle}>{step.title}</h3>
-                <div className={styles.stepVisual}>
-                  {index === 0 && <img src={imgFrame1} alt={step.title} />}
-                  {index === 1 && <img src={imgScreenshot} alt={step.title} />}
-                  {index === 2 && <img src={imgFrame2} alt={step.title} />}
-                </div>
-              </div>
-              {index < steps.length - 1 && (
-                <div className={styles.stepDivider}>
-                  <img src={imgPlus} alt="next step" />
-                </div>
-              )}
-            </div>
-          ))}
+    <section className={styles.howItWorksSection} id="how-it-works">
+      <h2 className={styles.sectionTitle}>Seyfo nasıl çalışır?</h2>
+      <p className={styles.sectionSubtitle}>Kurulum yok. ERP şart değil. Excel yükler gibi başla!</p>
+      <div className={styles.howItWorksCards}>
+        <div className={styles.howItWorksCard}>
+          <img src={imgTheMobilePhoneScreenWithAllActiveBudgetsOverview} alt="Nakit akışını netleştirir" />
+          <h3>Nakit akışını netleştirir</h3>
+          <p>Paranın nereye gittiğini otomatik görürsün.</p>
+        </div>
+        <div className={styles.howItWorksCard}>
+          <img src={imgTheMobilePhoneScreenWithAllFinancialAccountsOverview} alt="Finansal riskleri önceden gösterir" />
+          <h3>Finansal riskleri önceden gösterir</h3>
+          <p>Önümüzdeki 30 gün içinde nakit sıkışacak mısın önceden bilirsin.</p>
+        </div>
+        <div className={styles.howItWorksCard}>
+          <img src={imgTheMobilePhoneScreenWithAllTransactionsOverview} alt="Finansal durumu iş diliyle özetler" />
+          <h3>Finansal durumu iş diliyle özetler</h3>
+          <p>Muhasebe dilini değil, iş diliyle rapor alırsın.</p>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HowItWorksSection
+export default HowItWorksSection;

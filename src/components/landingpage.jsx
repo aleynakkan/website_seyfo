@@ -133,62 +133,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className={styles.ctaSection}>
-        <h2 className={styles.ctaTitle}>
-          <span>14 gün boyunca </span>
-          <span className={styles.ctaTitleAccent}>ücretsiz</span>
-          <span> deneyin!</span>
-        </h2>
-        <p className={styles.ctaDesc}>Kredi kartı gerekmeden ücretsiz deneyin, memnun kalırsanız abone olun.</p>
-        <form className={styles.ctaForm} onSubmit={handleEmailSubmit}>
-          <input type="email" placeholder="e-Posta adresinizi girin" className={styles.ctaInput} value={email} onChange={e => setEmail(e.target.value)} required />
-          <button type="submit" className={styles.ctaFormBtn}>Ücretsiz Deneyin</button>
-        </form>
-        <p className={styles.ctaNote}>Kredi kartı bilgisi gerekmeden hemen başlayabilir ve işletmenizi kontrol edebilirsiniz.</p>
-      </section>
-      {/* FOOTER */}
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <div className={styles.footerCol}>
-            <h3>Seyfo</h3>
-            <ul>
-              <li><a href="#about">Hakkımızda</a></li>
-              <li><a href="#features">Özellikler</a></li>
-              <li><a href="#help">Yardım Merkezi</a></li>
-            </ul>
-          </div>
-          <div className={styles.footerCol}>
-            <h3>Çözümler</h3>
-            <ul>
-              <li><a href="#sme">KOBİ İçin Finans</a></li>
-              <li><a href="#ecommerce">E-ticaret İçin Çözümler</a></li>
-              <li><a href="#donation">Bağış Kampanyaları</a></li>
-              <li><a href="#multi">Çok Ortaklı İşletmeler</a></li>
-            </ul>
-          </div>
-          <div className={styles.footerCol}>
-            <h3>Destek</h3>
-            <ul>
-              <li><a href="#faq">Sıkça Sorulan Sorular</a></li>
-              <li><a href="#contact">İletişim</a></li>
-              <li><a href="#privacy">Gizlilik</a></li>
-            </ul>
-          </div>
-          <div className={styles.footerCol}>
-            <h3>Takip Edin</h3>
-            <div className={styles.footerSocials}>
-              <a href="#"><img src={imgVector} alt="" /></a>
-              <a href="#"><img src={imgVector1} alt="" /></a>
-              <a href="#"><img src={imgVector4} alt="" /></a>
-              <a href="#"><img src={imgVector6} alt="" /></a>
-            </div>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <span>© 2026 Seyfo. Tüm hakları saklıdır.</span>
-        </div>
-      </footer>
+      {/* ...CTA Section kaldırıldı, artık ayrı bir bileşen olarak kullanılacak... */}
     </div>
   );
 }

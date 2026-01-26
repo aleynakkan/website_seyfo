@@ -1,4 +1,3 @@
-import styles from './ctasection.module.css'
 
 const CTASection = ({ email, setEmail, onSubmit }) => {
   return (
@@ -10,11 +9,7 @@ const CTASection = ({ email, setEmail, onSubmit }) => {
             <span className={styles.underline}>ücretsiz</span>
             <span> deneyin!</span>
           </h2>
-
-          <p className={styles.subtitle}>
-            Kredi kartı gerekmeden ücretsiz deneyin, memnun kalırsanız abone olun.
-          </p>
-
+          <p className={styles.subtitle}>Kredi kartı gerekmeden ücretsiz deneyin, memnun kalırsanız abone olun.</p>
           <form className={styles.form} onSubmit={onSubmit}>
             <input
               type="email"
@@ -24,18 +19,13 @@ const CTASection = ({ email, setEmail, onSubmit }) => {
               required
               className={styles.input}
             />
-            <button type="submit" className={styles.submitBtn}>
-              Ücretsiz Deneyin
-            </button>
+            <button type="submit" className={styles.submitBtn}>Ücretsiz Deneyin</button>
           </form>
-
-          <p className={styles.disclaimer}>
-            Kredi kartınızı kullanmadan ücretsiz deneyin, istediğiniz zaman abone olun.
-          </p>
+          <p className={styles.disclaimer}>Kredi kartı bilgisi gerekmeden hemen başlayabilir ve işletmenizi kontrol edebilirsiniz.</p>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CTASection
+export default CTASection;
