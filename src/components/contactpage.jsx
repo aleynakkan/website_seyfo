@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import styles from './contactpage.module.css'
 
-const sendIcon = "src/assets/contact/sendicon.svg"
-const checkIcon = "src/assets/contact/checkicon.svg"
+import sendIcon from "src/assets/contact/sendicon.svg"
+import checkIcon from "src/assets/contact/checkicon.svg"
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

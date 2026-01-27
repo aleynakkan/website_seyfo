@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './navbar.module.css'
+import imglogoicon from 'src/assets/landing/logo+name.svg'
 
 const imglogoicon = "src/assets/landing/logo+name.svg"
 const Navbar = ({ onNavigate, currentPage }) => {

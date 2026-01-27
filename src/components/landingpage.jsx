@@ -3,9 +3,9 @@ import styles from './landingpage.module.css'
 
 // Image constants from Figma
 const imgImage12 = "https://www.figma.com/api/mcp/asset/be0b37f6-1486-4857-8984-d751a9d77fe0"
-const imgScreenshot = "/src/assets/landing/veriyonetimiss.png"
-const imgContainer = "/src/assets/landing/tryicon.png"
-const imgIcRoundPlus = "/src/assets/landing/plusicon.svg"
+import imgScreenshot from 'src/assets/landing/veriyonetimiss.png'
+import imgContainer from 'src/assets/landing/tryicon.svg'
+import plusicon from 'src/assets/landing/plusicon.svg'
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
@@ -197,7 +197,7 @@ export default function LandingPage() {
                       type="button"
                     >
                       <h3 className={styles.stepTitle}>{step.title}</h3>
-                      <img src={imgIcRoundPlus} alt="" className={styles.stepIcon} aria-hidden="true" />
+                      <img src={plusicon} alt="plus_icon" className={styles.stepIcon} aria-hidden="true" />
                     </button>
 
                     <div
