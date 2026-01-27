@@ -1,20 +1,55 @@
-
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import styles from './landingpage.module.css'
 
 // Image constants from Figma
 const imgImage12 = "https://www.figma.com/api/mcp/asset/be0b37f6-1486-4857-8984-d751a9d77fe0"
-const imgScreenshot = "https://www.figma.com/api/mcp/asset/aa8d3abe-9bed-4034-95c7-3b56c833a269"
-const imgContainer = "https://www.figma.com/api/mcp/asset/ecfc8d3d-1969-4102-9b38-48cbf32aee54"
-const imgIcRoundPlus = "https://www.figma.com/api/mcp/asset/1abbfc49-220a-4c4a-89bd-e428fac8018a"
+const imgScreenshot = "/src/assets/landing/veriyonetimiss.png"
+const imgContainer = "/src/assets/landing/tryicon.png"
+const imgIcRoundPlus = "/src/assets/landing/plusicon.svg"
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleEmailSubmit = (e) => {
+  // How it works accordion state
+  const [activeStep, setActiveStep] = useState(0)
+
+  const steps = useMemo(() => ([
+    {
+      title: 'Banka ekstresi veya e-fatura yükle',
+      description:
+        'CSV/Excel veya e-fatura dosyanızı yükleyin. Seyfo verileri otomatik sınıflandırır.'
+    },
+    {
+      title: 'CFO Assistant otomatik analiz etsin.',
+      description:
+        'Gelir-gider, nakit akışı ve trendleri çıkarır. Riskleri ve fırsatları iş diliyle özetler.'
+    },
+    {
+      title: 'Her gün net tabloyu gör.',
+      description:
+        '“Kasada ne var, ne olacak?” sorusunun cevabını günlük olarak net biçimde takip edin.'
+    },
+  ]), [])
+
+  const handleEmailSubmit = async (e) => {
     e.preventDefault()
-    // Email subscription logic here
-    console.log('Email submitted:', email)
+    const normalized = email.trim().toLowerCase()
+    if (!normalized) return
+
+    try {
+      setIsSubmitting(true)
+      // TODO: burada API isteği yapabilirsin (fetch/axios)
+      console.log('Email submitted:', normalized)
+      // Basit UX: success temizleme
+      setEmail('')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const toggleStep = (index) => {
+    setActiveStep(prev => (prev === index ? -1 : index))
   }
 
   return (
@@ -22,7 +57,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className={styles.hero} role="banner">
         {/* Decorative background elements */}
-        <div className={styles.heroBackground}>
+        <div className={styles.heroBackground} aria-hidden="true">
           <div className={styles.bgBlurRed}></div>
           <div className={styles.bgCircle}></div>
           <div className={styles.bgDotLeft}></div>
@@ -34,29 +69,33 @@ export default function LandingPage() {
             <div className={styles.headingWrapper}>
               <h1 className={styles.mainHeading}>
                 İşletmenizin finansal fotoğrafını
-                <span className={styles.highlight}> seyfo ile her gün daha net görün.</span>
+                   <br /><span className={styles.highlight}>her gün daha net </span><br />görün.
               </h1>
             </div>
-            
+
             <p className={styles.subtitle}>
-              Seyfo banka hareketlerinizi, gelir–giderlerinizi ve nakit akışınızı otomatik analiz eder. 
+              Seyfo banka hareketlerinizi, gelir–giderlerinizi ve nakit akışınızı otomatik analiz eder.
               Size her gün "Kasada ne var, ne olacak?" sorusunun cevabını verir.
             </p>
-            
+
             <div className={styles.ctaButtons}>
-              <button className={styles.primaryBtn} aria-label="Ücretsiz deneme başlat">
+              <button
+                className={styles.primaryBtn}
+                aria-label="Ücretsiz deneme başlat"
+                onClick={(contact) => {
+                  // TODO: signup sayfasına yönlendirme veya modal
+                  console.log('Start free trial')
+                }}
+              >
                 Ücretsiz Dene
               </button>
-              <button className={styles.secondaryBtn} aria-label="Demo videosu izle">
-                Demo İzle
-              </button>
-            </div>
+             </div>
           </div>
-          
+
           <div className={styles.heroImageWrapper}>
-            <img 
-              src={imgImage12} 
-              alt="Seyfo dashboard finansal analiz ekranı" 
+            <img
+              src='src/assets/landing/seyfohero.png'
+              alt="Seyfo dashboard finansal analiz ekranı"
               className={styles.heroImage}
               loading="eager"
             />
@@ -69,7 +108,7 @@ export default function LandingPage() {
         <h2 id="features-heading" className={styles.sectionTitle}>
           <span className={styles.titleAccent}>Seyfo ile</span> neler yapabilirsiniz?
         </h2>
-        
+
         <div className={styles.featureGrid}>
           <article className={styles.featureCard}>
             <h3 className={styles.featureTitle}>
@@ -86,10 +125,10 @@ export default function LandingPage() {
 
           <article className={styles.featureCard}>
             <h3 className={styles.featureTitle}>
-              Önümüzdeki 30 gün içinde nakit sıkışacak mısın önceden bilirsin.
+              Önümüzdeki 30-60-90 gün sonraki nakit durumunu önceden bilirsin.
             </h3>
             <div className={styles.featureVisual}>
-              <div className={styles.chartContainer}>
+              <div className={styles.chartContainer} aria-hidden="true">
                 <div className={styles.chartBar} style={{ height: '70px' }}>
                   <div className={styles.chartDot}></div>
                 </div>
@@ -103,16 +142,16 @@ export default function LandingPage() {
                   <div className={styles.chartDot}></div>
                 </div>
               </div>
-              <div className={styles.chartDecorative}></div>
+              <div className={styles.chartDecorative} aria-hidden="true"></div>
             </div>
           </article>
 
           <article className={styles.featureCard}>
             <h3 className={styles.featureTitle}>
-              Muhasebe dilini değil, iş diliyle rapor alırsın.
+              Muhasebe diliyle değil, iş diliyle rapor alırsın.
             </h3>
             <div className={styles.featureVisual}>
-              <div className={styles.reportsStack}>
+              <div className={styles.reportsStack} aria-hidden="true">
                 <div className={styles.reportCard} style={{ transform: 'rotate(12deg)' }}></div>
                 <div className={styles.reportCard} style={{ transform: 'rotate(-6deg)' }}></div>
                 <div className={styles.reportCard} style={{ transform: 'rotate(3deg)' }}>
@@ -121,8 +160,8 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className={styles.reportDotLeft}></div>
-              <div className={styles.reportDotRight}></div>
+              <div className={styles.reportDotLeft} aria-hidden="true"></div>
+              <div className={styles.reportDotRight} aria-hidden="true"></div>
             </div>
           </article>
         </div>
@@ -137,37 +176,48 @@ export default function LandingPage() {
           <p className={styles.howItWorksSubtitle}>
             Kurulum yok. ERP şart değil. Excel yükler gibi başla!
           </p>
-
-
-
-
-
-
         </div>
-        
+
         <div className={styles.stepsWrapper}>
           <div className={styles.stepsAndDemo}>
-            <div className={styles.stepsColumn}>
-              <button className={styles.stepItem} aria-expanded="false">
-                <h3 className={styles.stepTitle}>Banka ekstresi veya e-fatura yükle</h3>
-                <img src={imgIcRoundPlus} alt="" className={styles.stepIcon} aria-hidden="true" />
-              </button>
-              
-              <button className={styles.stepItem} aria-expanded="false">
-                <h3 className={styles.stepTitle}>CFO Assistant otomatik analiz etsin.</h3>
-                <img src={imgIcRoundPlus} alt="" className={styles.stepIcon} aria-hidden="true" />
-              </button>
-              
-              <button className={styles.stepItem} aria-expanded="false">
-                <h3 className={styles.stepTitle}>Her gün net tabloyu gör.</h3>
-                <img src={imgIcRoundPlus} alt="" className={styles.stepIcon} aria-hidden="true" />
-              </button>
+            <div className={styles.stepsColumn} role="list">
+              {steps.map((step, idx) => {
+                const expanded = activeStep === idx
+                const panelId = `step-panel-${idx}`
+                const buttonId = `step-button-${idx}`
+
+                return (
+                  <div key={step.title} className={styles.stepRow} role="listitem">
+                    <button
+                      id={buttonId}
+                      className={styles.stepItem}
+                      aria-expanded={expanded}
+                      aria-controls={panelId}
+                      onClick={() => toggleStep(idx)}
+                      type="button"
+                    >
+                      <h3 className={styles.stepTitle}>{step.title}</h3>
+                      <img src={imgIcRoundPlus} alt="" className={styles.stepIcon} aria-hidden="true" />
+                    </button>
+
+                    <div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
+                      className={styles.stepPanel}
+                      hidden={!expanded}
+                    >
+                      <p className={styles.stepDescription}>{step.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
-            
+
             <div className={styles.demoImageWrapper}>
-              <img 
-                src={imgScreenshot} 
-                alt="Seyfo uygulaması demo ekran görüntüsü" 
+              <img
+                src={imgScreenshot}
+                alt="Seyfo uygulaması demo ekran görüntüsü"
                 className={styles.demoImage}
                 loading="lazy"
               />
@@ -180,36 +230,33 @@ export default function LandingPage() {
       <section className={styles.ctaSection} aria-labelledby="cta-heading">
         <div className={styles.ctaContent}>
           <h2 id="cta-heading" className={styles.ctaHeading}>
-            14 gün boyunca <span className={styles.ctaHighlight}>ücretsiz</span> deneyin!
+            7 gün boyunca <span className={styles.ctaHighlight}>ücretsiz</span> deneyin!
           </h2>
-          
+
           <p className={styles.ctaDescription}>
             Kredi kartı gerekmeden ücretsiz deneyin, memnun kalırsanız abone olun.
           </p>
-          
+
           <form className={styles.emailForm} onSubmit={handleEmailSubmit}>
-            <input 
-              type="email" 
+            <input
+              type="email"
               className={styles.emailInput}
-              placeholder="e-Posta adresinizi girin" 
+              placeholder="e-Posta adresinizi girin"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               aria-label="E-posta adresi"
+              autoComplete="email"
             />
-            <button type="submit" className={styles.ctaButton}>
-              Ücretsiz Deneyin
+            <button type="submit" className={styles.ctaButton} disabled={isSubmitting}>
+              {isSubmitting ? 'Gönderiliyor…' : 'Ücretsiz Deneyin'}
             </button>
           </form>
-          
+
           <p className={styles.ctaDisclaimer}>
             Kredi kartı bilgisi gerekmeden hemen başlayabilir ve işletmenizi kontrol edebilirsiniz.
           </p>
         </div>
-
-
-
-
       </section>
     </div>
   )

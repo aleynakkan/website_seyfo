@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styles from './contactpage.module.css'
 
-const sendIcon = "https://www.figma.com/api/mcp/asset/3bbcf2fd-3c93-405f-8d87-41d35165e074"
-const checkIcon = "https://www.figma.com/api/mcp/asset/6929ce3d-6aa1-4f05-9e1c-ff08c8623e28"
+const sendIcon = "src/assets/contact/sendicon.svg"
+const checkIcon = "src/assets/contact/checkicon.svg"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
