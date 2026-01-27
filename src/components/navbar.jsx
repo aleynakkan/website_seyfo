@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './navbar.module.css'
-import imglogoicon from 'src/assets/landing/logo+name.svg'
+import imglogoicon from '../src/assets/landing/logo+name.svg'
 
 const Navbar = ({ onNavigate, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false)
