@@ -6,6 +6,7 @@ const imgImage12 = "https://www.figma.com/api/mcp/asset/be0b37f6-1486-4857-8984-
 import imgScreenshot from 'src/assets/landing/veriyonetimiss.png'
 import imgContainer from 'src/assets/landing/tryicon.svg'
 import plusicon from 'src/assets/landing/plusicon.svg'
+import seyfohero from 'src/assets/landing/seyfohero.png'
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
@@ -94,7 +95,7 @@ export default function LandingPage() {
 
           <div className={styles.heroImageWrapper}>
             <img
-              src='src/assets/landing/seyfohero.png'
+              src={seyfohero}
               alt="Seyfo dashboard finansal analiz ekranı"
               className={styles.heroImage}
               loading="eager"
