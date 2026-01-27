@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react'
-import styles from './landingpage.module.css'
+import styles from './landingpage.module.css';
 
 // Image constants from Figma
 const imgImage12 = "https://www.figma.com/api/mcp/asset/be0b37f6-1486-4857-8984-d751a9d77fe0"
-import imgScreenshot from '../src/assets/landing/veriyonetimiss.png'
-import imgContainer from '../src/assets/landing/tryicon.svg'
-import plusicon from '../src/assets/landing/plusicon.svg'
-import seyfohero from '../src/assets/landing/seyfohero.png'
+import imgScreenshot from '../assets/landing/veriyonetimiss.png'
+import imgContainer from '../assets/landing/tryicon.png'
+import plusicon from '../assets/landing/plusicon.svg'
+import seyfohero from '../assets/landing/seyfohero.png'
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
