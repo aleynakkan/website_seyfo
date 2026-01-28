@@ -12,7 +12,7 @@
   align-items: flex-start;
   position: relative;
   background-color: #f8f7f5;
-  min-height: 600px;
+  min-height: 700px;
   overflow: hidden;
   padding: 96px 63px 72px;
   display: flex;
@@ -82,10 +82,10 @@
   flex-direction: row;             /* ✅ iki sütun */
   align-items: center;             /* ✅ dikey hizalama */
   justify-content: space-between;  /* ✅ solda text, sağda görsel */
-  gap: 80px;                       /* aralık */
+  gap: 20px;                       /* aralık */
 
   /* küçük iç boşluk: görseldeki ferahlık */
-  padding: 0 20px;
+  padding: 20px 20px;
 }
 
 .heroTextWrapper {
@@ -94,7 +94,7 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
-  transform: translateY(-200px); /* yazıları 20px yukarı alır */
+  transform: translateY(-25px); /* yazıları 20px yukarı alır */
   align-items: flex-start;         /* ✅ sola hizala */
   text-align: left;                /* ✅ metin sola */
 }
@@ -196,7 +196,7 @@
 .heroImageWrapper {
   width: 100%;
   max-width: 700px;     /* ✅ daha büyük sağ kol */
-  height: 800px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: flex-end; /* ✅ sağa hizala */
