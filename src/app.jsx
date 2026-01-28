@@ -15,11 +15,13 @@ function App() {
     window.scrollTo(0, 0)
   }
 
+  
+
   return (
     <div className="app">
       <Navbar onNavigate={handleNavigation} currentPage={currentPage} />
       <main className="main-content">
-        {currentPage === 'home' && <LandingPage />}
+        {currentPage === 'home' && <LandingPage onNavigate={handleNavigation} />}
         {currentPage === 'features' && <FeaturesPage />}
         {currentPage === 'pricing' && <PricingPage />}
         {currentPage === 'contact' && <ContactPage />}

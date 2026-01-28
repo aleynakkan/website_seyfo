@@ -53,7 +53,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className={styles.contactPage}>
+    <div  id='contact' className={styles.contactPage}>
       {/* Header */}
       <section className={styles.header}>
         <h1>Bize Ulaşın</h1>
