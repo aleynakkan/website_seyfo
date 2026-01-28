@@ -7,6 +7,7 @@ import imgScreenshot from '../assets/landing/veriyonetimiss.svg'
 import imgContainer from '../assets/landing/tryicon.png'
 import plusicon from '../assets/landing/plusicon.svg'
 import seyfohero from '../assets/landing/seyfohero.png'
+import dene from '../assets/landing/dene.svg'
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
@@ -57,12 +58,10 @@ export default function LandingPage() {
     <div className={styles.landingPage}>
       {/* Hero Section */}
       <section className={styles.hero} role="banner">
+        <img src={dene} alt="arkaplan" className={styles.heroBackground} aria-hidden="true" />
         {/* Decorative background elements */}
-        <div className={styles.heroBackground} aria-hidden="true">
-          <div className={styles.bgBlurRed}></div>
-          <div className={styles.bgCircle}></div>
-          <div className={styles.bgDotLeft}></div>
-          <div className={styles.bgDotRight}></div>
+        <div className={styles.heroBackground}   aria-hidden="true">
+      
         </div>
 
         <div className={styles.heroContent}>
@@ -94,12 +93,7 @@ export default function LandingPage() {
           </div>
 
           <div className={styles.heroImageWrapper}>
-            <img
-              src={seyfohero}
-              alt="Seyfo dashboard finansal analiz ekranı"
-              className={styles.heroImage}
-              loading="eager"
-            />
+        
           </div>
         </div>
       </section>
