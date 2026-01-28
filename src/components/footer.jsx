@@ -2,10 +2,10 @@
 import styles from './footer.module.css'
 
 // Sosyal ikonlar (Figma’dan)
-const imgVector  = "https://www.figma.com/api/mcp/asset/9ef61035-2883-4997-b586-6d1fd395d50e"
-const imgVector1 = "https://www.figma.com/api/mcp/asset/64b18f44-131a-438f-b8a5-a3ebbb502e98"
-const imgVector4 = "https://www.figma.com/api/mcp/asset/7b9a5412-afb8-44e8-ba0d-72779666d80c"
-const imgVector6 = "https://www.figma.com/api/mcp/asset/37455917-a553-4124-80c8-1c79987dda89"
+import twitter from '../assets/footer/twitter.svg'
+import linkedin from '../assets/footer/linkedin.svg'
+import youtube from '../assets/footer/youtube.svg'
+import instagram from '../assets/footer/instagram.svg'
 
 export default function Footer() {
   return (
@@ -31,10 +31,10 @@ export default function Footer() {
 
         {/* Sosyal ikonlar */}
         <div className={styles.social} aria-label="Sosyal bağlantılar">
-          <a href="#" aria-label="Twitter"><img src={imgVector} alt="" /></a>
-          <a href="#" aria-label="LinkedIn"><img src={imgVector1} alt="" /></a>
-          <a href="#" aria-label="Instagram"><img src={imgVector4} alt="" /></a>
-          <a href="#" aria-label="YouTube"><img src={imgVector6} alt="" /></a>
+          <a href="#" aria-label="Twitter"><img src={twitter} alt="" /></a>
+          <a href="https://www.linkedin.com/company/cfo-seyfo" aria-label="LinkedIn"><img src={linkedin} alt="" /></a>
+          <a href="#" aria-label="Instagram"><img src={instagram} alt="" /></a>
+          <a href="#" aria-label="YouTube"><img src={youtube} alt="" /></a>
         </div>
       </div>
 

@@ -523,11 +523,6 @@
   background-color: #eeecea;
 }
 
-.stepItem:focus {
-  outline: 2px solid #dc0005;
-  outline-offset: -2px;
-}
-
 .stepTitle {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 24px;
@@ -546,7 +541,7 @@
 
 /* NEW: expanded state visuals */
 .stepItem[aria-expanded="true"] {
-  background-color: #ffffff;
+  background-color: #f8f7f5;
 }
 
 .stepItem[aria-expanded="true"] .stepIcon {
