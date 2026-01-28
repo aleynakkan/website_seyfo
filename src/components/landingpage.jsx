@@ -4,10 +4,13 @@ import styles from './landingpage.module.css';
 // Image constants from Figma
 const imgImage12 = "https://www.figma.com/api/mcp/asset/be0b37f6-1486-4857-8984-d751a9d77fe0"
 import imgScreenshot from '../assets/landing/veriyonetimiss.svg'
-import imgContainer from '../assets/landing/tryicon.png'
+import imgContainer from '../assets/landing/tryicon.svg'
 import plusicon from '../assets/landing/plusicon.svg'
 import seyfohero from '../assets/landing/seyfohero.png'
 import dene from '../assets/landing/dene.svg'
+import gif1 from '../assets/landing/gif1.gif'
+import gif2 from '../assets/landing/gif2.gif'
+import gif3 from '../assets/landing/gif3.gif'
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
@@ -68,8 +71,8 @@ export default function LandingPage() {
           <div className={styles.heroTextWrapper}>
             <div className={styles.headingWrapper}>
               <h1 className={styles.mainHeading}>
-                İşletmenizin finansal fotoğrafını
-                   <br /><span className={styles.highlight}>her gün daha net </span><br />görün.
+                 
+                   <br /><span className={styles.highlight}>  İşletmenizin finansal fotoğrafını  </span><br /> her gün daha net görün.
               </h1>
             </div>
 
@@ -103,61 +106,41 @@ export default function LandingPage() {
         <h2 id="features-heading" className={styles.sectionTitle}>
           <span className={styles.titleAccent}>Seyfo ile</span> neler yapabilirsiniz?
         </h2>
+        <br/><br/>
 
         <div className={styles.featureGrid}>
+          
           <article className={styles.featureCard}>
+            <div className={styles.featureVisual} >
+              <img src={gif1} alt="Feature 1" />
+            </div>
             <h3 className={styles.featureTitle}>
+              <b>Nakit akışını netleştirir.</b> <br/>
               Paranın nereye gittiğini otomatik görürsün.
             </h3>
-            <div className={styles.featureVisual}>
-              <div className={styles.featureIconWrapper}>
-                <img src={imgContainer} alt="" className={styles.featureIcon} aria-hidden="true" />
-                <div className={styles.decorativeDot1}></div>
-                <div className={styles.decorativeDot2}></div>
-              </div>
-            </div>
+            
           </article>
 
-          <article className={styles.featureCard}>
-            <h3 className={styles.featureTitle}>
-              Önümüzdeki 30-60-90 gün sonraki nakit durumunu önceden bilirsin.
-            </h3>
-            <div className={styles.featureVisual}>
-              <div className={styles.chartContainer} aria-hidden="true">
-                <div className={styles.chartBar} style={{ height: '70px' }}>
-                  <div className={styles.chartDot}></div>
-                </div>
-                <div className={styles.chartBar} style={{ height: '117px' }}>
-                  <div className={styles.chartDot}></div>
-                </div>
-                <div className={styles.chartBar} style={{ height: '94px' }}>
-                  <div className={styles.chartDot}></div>
-                </div>
-                <div className={styles.chartBar} style={{ height: '141px', opacity: 0.5 }}>
-                  <div className={styles.chartDot}></div>
-                </div>
-              </div>
-              <div className={styles.chartDecorative} aria-hidden="true"></div>
+           <article className={styles.featureCard}>
+            <div className={styles.featureVisual} >
+              <img src={gif2} alt="Feature 1" />
             </div>
+            <h3 className={styles.featureTitle}>
+              <b>Finansal riskleri önceden gösterir.</b> <br/>
+              Önümüzdeki 30-60-90 gün içinde nakit durumunu önceden bilirsin.
+            </h3>
+            
           </article>
 
-          <article className={styles.featureCard}>
-            <h3 className={styles.featureTitle}>
-              Muhasebe diliyle değil, iş diliyle rapor alırsın.
-            </h3>
-            <div className={styles.featureVisual}>
-              <div className={styles.reportsStack} aria-hidden="true">
-                <div className={styles.reportCard} style={{ transform: 'rotate(12deg)' }}></div>
-                <div className={styles.reportCard} style={{ transform: 'rotate(-6deg)' }}></div>
-                <div className={styles.reportCard} style={{ transform: 'rotate(3deg)' }}>
-                  <div className={styles.reportPlusBtn}>
-                    <span className={styles.plusIcon}>+</span>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.reportDotLeft} aria-hidden="true"></div>
-              <div className={styles.reportDotRight} aria-hidden="true"></div>
+           <article className={styles.featureCard}>
+            <div className={styles.featureVisual} >
+              <img src={gif3} alt="Feature 1" />
             </div>
+            <h3 className={styles.featureTitle}>
+              <b>Finansal durumu iş diliyle özetler.</b> <br/>
+              Muhasebe dilini değil, iş diliyle rapor alırsın.
+            </h3>
+            
           </article>
         </div>
       </section>

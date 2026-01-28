@@ -80,7 +80,7 @@
 
   display: flex;
   flex-direction: row;             /* ✅ iki sütun */
-  align-items: center;             /* ✅ dikey hizalama */
+  align-items: left;             /* ✅ dikey hizalama */
   justify-content: space-between;  /* ✅ solda text, sağda görsel */
   gap: 20px;                       /* aralık */
 
@@ -132,16 +132,16 @@
   font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 48.929px;
   font-weight: bold;
-  line-height: 51.375px;
-  letter-spacing: 0.1957px;
+  line-height: 61.375px;
+  letter-spacing: 1.1957px;
   color: #000000;
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 
 .highlight {
   background-color: #fee3e2;
-  padding: 0 2px;
+  padding: 0 1px;
 }
 
 .subtitle {
@@ -150,7 +150,7 @@
   line-height: 35px;
   letter-spacing: 0.1957px;
   color: #000000;
-  text-align: center;
+  text-align: left;
   max-width: 834px;
   margin: 0;
 }
@@ -158,8 +158,8 @@
 .ctaButtons {
   display: flex;
   gap: 10px;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   width: 100%;
 
 }
@@ -245,13 +245,13 @@
 .featureCard {
   background-color: #f8f7f5;
   border-radius: 28.257px;
-  overflow: hidden;
-  height: 450px;
+  overflow: visible ;
+  height: 375px;
   padding: 0;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease;;
 }
 
 .featureCard:hover {
@@ -260,11 +260,11 @@
 
 .featureTitle {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 44px;
   font-weight: 400;
   color: #000000;
-  padding: 31px 31px 20px 31px;
+  padding: 0px 0px 20px 31px;
   margin: 0;
 }
 
@@ -274,6 +274,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: visible;
+  transform: translateY(-50px);
+  max-height: 150px;  
 }
 
 /* Feature 1 */
@@ -281,12 +284,17 @@
   position: relative;
   width: 190px;
   height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  
 }
 
 .featureIcon {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  align-items: center;
 }
 
 .decorativeDot1 {
