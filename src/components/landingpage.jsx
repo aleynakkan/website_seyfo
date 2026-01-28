@@ -17,7 +17,7 @@ export default function LandingPage({ onNavigate }) {
 
   const steps = useMemo(() => ([
     {
-      title: 'Banka ekstresinizi excel olarak yukleyin veya entegre edin.',
+      title: 'Banka ekstresinizi excel olarak yükleyin.',
       description: 'Bankanizdan temin ettiginiz Excel dosyanızı yükleyin. Seyfo verileri otomatik sınıflandırır.'
     },
     {
@@ -112,7 +112,7 @@ export default function LandingPage({ onNavigate }) {
             </div>
             <h3 className={styles.featureTitle}>
               <b>Finansal durumu iş diliyle özetler.</b> <br/>
-              Karmasik muhasebe terimleriyle değil, basitlestirilmis gundelik iş diliyle rapor alırsın.
+              Karmaşık muhasebe terimleriyle değil, basitleştirilmiş gündelik iş diliyle rapor alırsın.
             </h3>
           </article>
         </div>
@@ -125,7 +125,7 @@ export default function LandingPage({ onNavigate }) {
             <span className={styles.titleAccent}>Seyfo</span> nasıl çalışır?
           </h2>
           <p className={styles.howItWorksSubtitle}>
-            Kurulum yok. ERP şart değil. Excel yükler gibi başla! Sonrasinda otomatize edelibilir banka entegrasyonu ile devam et.
+            Kurulum yok. ERP şart değil. Excel yükler gibi başla! Sonrasında otomatize edilebilir banka entegrasyonu ile devam et.
           </p>
         </div>
 
