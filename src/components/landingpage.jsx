@@ -17,11 +17,11 @@ export default function LandingPage({ onNavigate }) {
 
   const steps = useMemo(() => ([
     {
-      title: 'Banka ekstresi veya e-fatura yükle',
-      description: 'CSV/Excel veya e-fatura dosyanızı yükleyin. Seyfo verileri otomatik sınıflandırır.'
+      title: 'Banka ekstresinizi excel olarak yukleyin veya entegre edin.',
+      description: 'Bankanizdan temin ettiginiz Excel dosyanızı yükleyin. Seyfo verileri otomatik sınıflandırır.'
     },
     {
-      title: 'CFO Assistant otomatik analiz etsin.',
+      title: 'CFO Asistan otomatik analiz etsin.',
       description: 'Gelir-gider, nakit akışı ve trendleri çıkarır. Riskleri ve fırsatları iş diliyle özetler.'
     },
     {
@@ -112,7 +112,7 @@ export default function LandingPage({ onNavigate }) {
             </div>
             <h3 className={styles.featureTitle}>
               <b>Finansal durumu iş diliyle özetler.</b> <br/>
-              Muhasebe dilini değil, iş diliyle rapor alırsın.
+              Karmasik muhasebe terimleriyle değil, basitlestirilmis gundelik iş diliyle rapor alırsın.
             </h3>
           </article>
         </div>
@@ -125,7 +125,7 @@ export default function LandingPage({ onNavigate }) {
             <span className={styles.titleAccent}>Seyfo</span> nasıl çalışır?
           </h2>
           <p className={styles.howItWorksSubtitle}>
-            Kurulum yok. ERP şart değil. Excel yükler gibi başla!
+            Kurulum yok. ERP şart değil. Excel yükler gibi başla! Sonrasinda otomatize edelibilir banka entegrasyonu ile devam et.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function LandingPage({ onNavigate }) {
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
           <h2 className={styles.ctaHeading}>
-            7 gün boyunca <span className={styles.ctaHighlight}>ücretsiz</span> deneyin!
+            14 gün boyunca <span className={styles.ctaHighlight}>ücretsiz</span> deneyin!
           </h2>
           <p className={styles.ctaDescription}>
             Kredi kartı gerekmeden hemen başlayın.
