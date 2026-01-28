@@ -11,6 +11,17 @@ import dene from '../assets/landing/dene.svg'
 import gif1 from '../assets/landing/gif1.gif'
 import gif2 from '../assets/landing/gif2.gif'
 import gif3 from '../assets/landing/gif3.gif'
+import React from 'react';
+
+const App = () => {
+  return (
+    <gif2
+      src="https://lottie.host/f45f5024-852f-47d4-9375-bfd5f126b379/Tm1YiwNcfO.lottie"
+      loop
+      autoplay
+    />
+  );
+};
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
@@ -106,7 +117,7 @@ export default function LandingPage() {
         <h2 id="features-heading" className={styles.sectionTitle}>
           <span className={styles.titleAccent}>Seyfo</span> ile neler yapabilirsiniz?
         </h2>
-        <br/><br/>
+        <br/><br/><br/>
 
         <div className={styles.featureGrid}>
           
