@@ -104,7 +104,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className={styles.features} aria-labelledby="features-heading">
         <h2 id="features-heading" className={styles.sectionTitle}>
-          <span className={styles.titleAccent}>Seyfo ile</span> neler yapabilirsiniz?
+          <span className={styles.titleAccent}>Seyfo</span> ile neler yapabilirsiniz?
         </h2>
         <br/><br/>
 
