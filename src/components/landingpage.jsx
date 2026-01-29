@@ -17,8 +17,8 @@ export default function LandingPage({ onNavigate }) {
 
   const steps = useMemo(() => ([
     {
-      title: 'Banka ekstresinizi excel olarak yükleyin.',
-      description: 'Bankanizdan temin ettiginiz Excel dosyanızı yükleyin. Seyfo verileri otomatik sınıflandırır.'
+      title: 'Banka ekstresini excel olarak yükleyin.',
+      description: 'Bankanizdan temin ettiginiz Excel dosyanızı yükleyin. Seyfo verileri otomatik sınıflandırır. Dilerseniz ekstre entegrasyonu ile otomatize edebilirsiniz.'
     },
     {
       title: 'CFO Asistan otomatik analiz etsin.',

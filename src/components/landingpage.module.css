@@ -226,7 +226,7 @@
   font-weight: bold;
   line-height: 60px;
   color: #000000;
-  text-align: left;
+  text-align: center;
   margin: 0 0 100px 0;
 }
 
@@ -462,11 +462,12 @@
    ========================= */
 .howItWorks {
   padding: 40px 64px 100px;
-  background-color: #ffffff;
+  ;
 }
 
 .howItWorksHeader {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .howItWorksSubtitle {
@@ -606,7 +607,7 @@
 
 .ctaHeading {
   font-family: 'Gelica', 'Arial', sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
   line-height: 60px;
   color: #ffffff;
