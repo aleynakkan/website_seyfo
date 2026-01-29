@@ -42,7 +42,7 @@ export default async function handler(req, res) {
 
     // Confirmation email to user
     const userMailOptions = {
-      from: process.env.EMAIL_USER,
+      from: 'Seyfo <' + process.env.EMAIL_USER + '>',
       to: email,
       subject: 'Mesajınız Alındı',
       html: `
