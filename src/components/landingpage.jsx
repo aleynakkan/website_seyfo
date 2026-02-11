@@ -6,6 +6,8 @@ import React from 'react';
 import imgScreenshot from '../assets/landing/veriyonetimiss.svg'
 import plusicon from '../assets/landing/plusicon.svg'
 import dene from '../assets/landing/dene.svg'
+import sayfasonukesik from '../assets/landing/sayfasonukesik.svg'
+import eclipsehero from '../assets/landing/eclipsehero.svg'
 
 export default function LandingPage({ onNavigate }) {
   const [email, setEmail] = useState('')
@@ -72,21 +74,25 @@ export default function LandingPage({ onNavigate }) {
                 Ücretsiz Dene
               </button>
             </div>
+            
           </div>
         </div>
       </section>
+      <img src={eclipsehero} alt="Eclipse Hero" className={styles.eclipseHero} aria-hidden="true" />
+      
 
       {/* Features Section */}
       <section className={styles.features} aria-labelledby="features-heading">
+        
         <h2 id="features-heading" className={styles.sectionTitle}>
           <span className={styles.titleAccent}>Seyfo</span> ile neler yapabilirsiniz?
         </h2>
         
         <div className={styles.featureGrid}>
           <article className={styles.featureCard}>
-            <div className={styles.featureVisual}>
+            
               
-            </div>
+           
             <h3 className={styles.featureTitle}>
               <b>Nakit akışını netleştirir.</b> <br/>
               Paranın nereye gittiğini otomatik görürsün.
@@ -94,29 +100,26 @@ export default function LandingPage({ onNavigate }) {
           </article>
 
           <article className={styles.featureCard}>
-            <div className={styles.featureVisual}>
-              
-            </div>
-            <h3 className={styles.featureTitle}>
+                       <h3 className={styles.featureTitle}>
               <b>Finansal riskleri önceden gösterir.</b> <br/>
               Önümüzdeki 30-60-90 gün içinde nakit durumunu önceden bilirsin.
             </h3>
           </article>
-
           <article className={styles.featureCard}>
-            <div className={styles.featureVisual}>
-              
-            </div>
-            <h3 className={styles.featureTitle}>
+                       <h3 className={styles.featureTitle}>
               <b>Finansal durumu iş diliyle özetler.</b> <br/>
               Karmaşık muhasebe terimleriyle değil, basitleştirilmiş gündelik iş diliyle rapor alırsın.
             </h3>
           </article>
         </div>
-      </section>
+        
+        </section>
+        <img src={sayfasonukesik} alt="sayfa sonu görseli" className={styles.pageEndImage} aria-hidden="true" />
+        
 
       {/* How It Works Section */}
       <section className={styles.howItWorks} aria-labelledby="how-it-works-heading">
+        
         <div className={styles.howItWorksHeader}>
           <h2 id="how-it-works-heading" className={styles.sectionTitle}>
             <span className={styles.titleAccent}>Seyfo</span> nasıl çalışır?

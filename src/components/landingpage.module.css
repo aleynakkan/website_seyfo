@@ -212,16 +212,28 @@
   border-radius: 8px;
 }
 
+.eclipseHero {
+  display: block;
+  height: auto;
+  margin: -115px 0 0 calc(-50vw + 50%);
+  padding: 0;
+  object-fit: cover;
+  position: relative;
+  z-index: 5;
+  transform: translateX(10px);
+}
+
 /* =========================
    FEATURES
    ========================= */
 .features {
   padding: 60px 63px 100px;
   background-color: #ffffff;
+  overflow: visible;
 }
 
 .sectionTitle {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: 'Poppins', 'Arial', sans-serif;
   font-size: 45px;
   font-weight: bold;
   line-height: 60px;
@@ -259,7 +271,7 @@
 }
 
 .featureTitle {
-  font-family: "Helvetica Neue";
+  font-family: "Poppins", "Arial", sans-serif;
   font-size: 24px;
   line-height: 44px;
   font-weight: 400;
@@ -447,13 +459,22 @@
   right: 25px;
 }
 
+.pageEndImage {
+  width: calc(100% + 300px);
+  margin-left: -150px;
+  margin-right: -150px;
+  margin-bottom: 100px;
+  display: block;
+  object-fit: cover;
+  transform: translateX(150px);
+}
+
 /* =========================
    HOW IT WORKS (Accordion)
    ========================= */
 .howItWorks {
   padding: 40px 64px 100px;
-  ;
-}
+  }
 
 .howItWorksHeader {
   margin-bottom: 40px;
