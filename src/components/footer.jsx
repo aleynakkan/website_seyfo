@@ -31,10 +31,10 @@ export default function Footer() {
 
         {/* Sosyal ikonlar */}
         <div className={styles.social} aria-label="Sosyal bağlantılar">
-          <a href="#" aria-label="Twitter"><img src={twitter} alt="" /></a>
+          <a href="#" aria-label="Twitter"><img src={twitter} alt="Twitter" /></a>
           <a href="https://www.linkedin.com/company/cfo-seyfo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" /></a>
-          <a href="#" aria-label="Instagram"><img src={instagram} alt="" /></a>
-          <a href="#" aria-label="YouTube"><img src={youtube} alt="" /></a>
+          <a href="https://www.instagram.com/cfoseyfo?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src={instagram} alt="Instagram" /></a>
+          <a href="#" aria-label="YouTube"><img src={youtube} alt="YouTube" /></a>
         </div>
       </div>
 
