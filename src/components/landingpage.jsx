@@ -95,7 +95,7 @@ export default function LandingPage({ onNavigate }) {
            
             <h3 className={styles.featureTitle}>
               <b>Nakit akışını netleştirir.</b> <br/>
-              Paranın nereye gittiğini otomatik görürsün.
+              Gelir ve giderlerini tek yerden görür, bütçeni kolayca kontrol edersin.
             </h3>
           </article>
 
