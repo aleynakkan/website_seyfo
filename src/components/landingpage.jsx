@@ -6,9 +6,6 @@ import React from 'react';
 import imgScreenshot from '../assets/landing/veriyonetimiss.svg'
 import plusicon from '../assets/landing/plusicon.svg'
 import dene from '../assets/landing/dene.svg'
-import gif1 from '../assets/landing/gif1.gif'
-import gif2 from '../assets/landing/gif2.gif'
-import gif3 from '../assets/landing/gif3.gif'
 
 export default function LandingPage({ onNavigate }) {
   const [email, setEmail] = useState('')
@@ -88,7 +85,7 @@ export default function LandingPage({ onNavigate }) {
         <div className={styles.featureGrid}>
           <article className={styles.featureCard}>
             <div className={styles.featureVisual}>
-              <img src={gif1} alt="Nakit Akışı" />
+              
             </div>
             <h3 className={styles.featureTitle}>
               <b>Nakit akışını netleştirir.</b> <br/>
@@ -98,7 +95,7 @@ export default function LandingPage({ onNavigate }) {
 
           <article className={styles.featureCard}>
             <div className={styles.featureVisual}>
-              <img src={gif2} alt="Risk Analizi" />
+              
             </div>
             <h3 className={styles.featureTitle}>
               <b>Finansal riskleri önceden gösterir.</b> <br/>
@@ -108,7 +105,7 @@ export default function LandingPage({ onNavigate }) {
 
           <article className={styles.featureCard}>
             <div className={styles.featureVisual}>
-              <img src={gif3} alt="Raporlama" />
+              
             </div>
             <h3 className={styles.featureTitle}>
               <b>Finansal durumu iş diliyle özetler.</b> <br/>

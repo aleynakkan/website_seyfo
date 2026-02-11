@@ -226,7 +226,7 @@
   font-weight: bold;
   line-height: 60px;
   color: #000000;
-  text-align: center;
+  text-align: left;
   margin: 0 0 100px 0;
 }
 
@@ -259,25 +259,15 @@
 }
 
 .featureTitle {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: "Helvetica Neue";
   font-size: 24px;
   line-height: 44px;
   font-weight: 400;
   color: #000000;
-  padding: 0px 0px 20px 31px;
+  padding: 100px 0px 20px 31px;
   margin: 0;
 }
 
-.featureVisual {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: visible;
-  transform: translateY(-70px);
-  max-height: 150px;  
-}
 
 /* Feature 1 */
 .featureIconWrapper {
@@ -600,10 +590,10 @@
 .ctaContent {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 25px;
   align-items: center;
   text-align: center;
-}
+  }
 
 .ctaHeading {
   font-family: 'Gelica', 'Arial', sans-serif;
