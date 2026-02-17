@@ -26,29 +26,16 @@ const Navbar = ({ onNavigate, currentPage }) => {
 
         {/* Navigation Links */}
         <div className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
-          {/*<button 
-            className={`${styles.navItem} ${currentPage === 'features' ? styles.active : ''}`}
-            onClick={() => handleNavClick('features')}
-          >
-            Özellikler
-          </button>
+        </div>
+
+        {/* Buttons */}
+        <div className={styles.buttons}>
           <button 
             className={`${styles.navItem} ${currentPage === 'pricing' ? styles.active : ''}`}
             onClick={() => handleNavClick('pricing')}
           >
             Fiyatlar
-          </button> 
-          <button 
-            className={`${styles.navItem} ${currentPage === 'contact' ? styles.active : ''}`}
-            onClick={() => handleNavClick('contact')}
-          >
-            İletişim
-          </button>*/}
-        </div>
-
-        {/* Buttons */}
-        <div className={styles.buttons}>
-          {/*<button className={styles.loginBtn}>Giriş Yapın</button>*/}
+          </button>
           <button className={styles.primaryBtn} onClick={() => handleNavClick('contact')}>Ücretsiz Deneyin</button>
         </div>
 

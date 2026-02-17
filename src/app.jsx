@@ -38,7 +38,7 @@ function App() {
       <main className="main-content">
         {currentPage === 'home' && <LandingPage onNavigate={handleNavigation} />}
         {currentPage === 'features' && <FeaturesPage />}
-        {currentPage === 'pricing' && <PricingPage />}
+        {currentPage === 'pricing' && <PricingPage onNavigate={handleNavigation} />}
         {currentPage === 'contact' && <ContactPage />}
       </main>
       <Footer onNavigate={handleNavigation} />

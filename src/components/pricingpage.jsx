@@ -1,93 +1,141 @@
 import { useState } from 'react'
 import styles from './pricingpage.module.css'
 
-const checkIcon = "https://www.figma.com/api/mcp/asset/e84c6033-5313-4d2d-91cc-019748781262"
+const plans = [
+  
+  {
+    id: 'profesyonel',
+    name: 'Profesyonel Plan',
+    description: 'Büyüyen işletmeler için',
+    monthlyPrice: 1000,
+    features: [
+      '30 Günlük Nakit Tahmini',
+      'Gider Analizi ve Hatalı Gider Tespiti',
+      'Yaklaşan Nakit Açığı Uyarıları',
+      'Finansal Sağlık Skoru',
+      'Gerçek Zamanlı Dashboard',
+      'Risk Görünümü',
+    ],
+    featured: true,
+  },
+  
+]
 
-export default function PricingPage() {
+function CheckIcon() {
   return (
-    <div className={styles.pricingPage}>
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+export default function PricingPage({ onNavigate }) {
+  const [isYearly, setIsYearly] = useState(false)
+  const [selectedPlan, setSelectedPlan] = useState(null)
+
+  const getPrice = (monthlyPrice) => {
+    if (!monthlyPrice) return null
+    if (isYearly) {
+      return Math.round(monthlyPrice * 0.8)
+    }
+    return monthlyPrice
+  }
+
+  const handleSelect = (planId) => {
+    setSelectedPlan(planId)
+    if (onNavigate) onNavigate('contact')
+  }
+
+  const goToContact = () => {
+    if (onNavigate) onNavigate('contact')
+  }
+
+  return (
+    <div className={styles.pricingPage} id="pricing">
       {/* Header */}
       <section className={styles.header}>
         <h1>Size uygun planı seçin</h1>
-        <p>Tüm planlar 14 gün ücretsiz deneme ile gelir. Kredi kartı bilgisi gerekmez.</p>
+
+        {/* Toggle */}
+        <div className={styles.toggleWrapper}>
+          <span className={`${styles.toggleLabel} ${styles.toggleSide} ${!isYearly ? styles.toggleActive : ''}`}>Aylık</span>
+          <button
+            className={`${styles.toggleSwitch} ${isYearly ? styles.toggleOn : ''}`}
+            onClick={() => setIsYearly(!isYearly)}
+            aria-label="Aylık / Yıllık geçiş"
+          >
+            <span className={styles.toggleKnob} />
+          </button>
+          <div className={`${styles.toggleSide} ${styles.toggleRight}`}>
+            <span className={`${styles.toggleLabel} ${isYearly ? styles.toggleActive : ''}`}>
+              Yıllık
+            </span>
+            <span className={`${styles.discountBadge} ${isYearly ? styles.discountVisible : ''}`}>%20 İndirim</span>
+          </div>
+        </div>
       </section>
 
       {/* Pricing Cards */}
       <section className={styles.pricingCards}>
-        {/* Başlangıç Plan */}
-        <div className={styles.card}>
-          <h2>Başlangıç</h2>
-          <p className={styles.description}>Küçük işletmeler için ideal</p>
-          
-          <div className={styles.price}>
-            <span className={styles.amount}>499₺</span>
-            <span className={styles.period}>/ay</span>
+        {plans.map((plan) => (
+          <div
+            key={plan.id}
+            className={`${styles.card} ${plan.featured ? styles.featured : ''} ${selectedPlan === plan.id ? styles.selected : ''}`}
+          >
+            {plan.featured && <div className={styles.badge}>En Popüler</div>}
+
+            <h2>{plan.name}</h2>
+            <p className={styles.description}>{plan.description}</p>
+
+            <div className={styles.priceBlock}>
+              {plan.monthlyPrice ? (
+                <>
+                  <div className={styles.priceRow}>
+                    <span className={styles.amount}>{getPrice(plan.monthlyPrice)}₺</span>
+                    <span className={styles.period}>/ay</span>
+                  </div>
+                  <p className={styles.billingNote}>
+                    {isYearly
+                      ? `Aylık ${plan.monthlyPrice}₺ yerine ${getPrice(plan.monthlyPrice)}₺ olarak faturalandırılır`
+                      : `Aylık ${plan.monthlyPrice}₺ olarak faturalandırılır`}
+                  </p>
+                  {isYearly && (
+                    <span className={styles.originalPrice}>{plan.monthlyPrice}₺/ay</span>
+                  )}
+                </>
+              ) : (
+                <div className={styles.priceRow}>
+                  <span className={styles.amount}>Özel</span>
+                  <span className={styles.period}>fiyat</span>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.divider} />
+
+            <ul className={styles.features}>
+              {plan.features.map((feature, i) => (
+                <li key={i}>
+                  <span className={styles.checkIcon}><CheckIcon /></span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <button
+              className={plan.featured ? styles.btnPrimary : styles.btnSecondary}
+              onClick={() => handleSelect(plan.id)}
+            >
+              {plan.monthlyPrice ? 'Hemen Başla' : 'Bizimle İletişime Geçin'}
+            </button>
           </div>
-
-          <ul className={styles.features}>
-            <li><img src={checkIcon} alt="check" /> 1 kullanıcı</li>
-            <li><img src={checkIcon} alt="check" /> Banka entegrasyonu</li>
-            <li><img src={checkIcon} alt="check" /> Temel raporlar</li>
-            <li><img src={checkIcon} alt="check" /> E-posta desteği</li>
-            <li><img src={checkIcon} alt="check" /> Mobil uygulama</li>
-          </ul>
-
-          <button className={styles.btnSecondary}>Hemen Başla</button>
-        </div>
-
-        {/* Profesyonel Plan - Featured */}
-        <div className={`${styles.card} ${styles.featured}`}>
-          <div className={styles.badge}>En Popüler</div>
-          
-          <h2 className={styles.whiteText}>Profesyonel</h2>
-          <p className={styles.descriptionLight}>Büyüyen işletmeler için</p>
-          
-          <div className={styles.price}>
-            <span className={`${styles.amount} ${styles.whiteText}`}>999₺</span>
-            <span className={styles.periodLight}>/ay</span>
-          </div>
-
-          <ul className={`${styles.features} ${styles.featuresLight}`}>
-            <li><img src={checkIcon} alt="check" /> 5 kullanıcıya kadar</li>
-            <li><img src={checkIcon} alt="check" /> Tüm banka entegrasyonları</li>
-            <li><img src={checkIcon} alt="check" /> Gelişmiş raporlar ve analizler</li>
-            <li><img src={checkIcon} alt="check" /> Öncelikli destek</li>
-            <li><img src={checkIcon} alt="check" /> Mobil uygulama</li>
-            <li><img src={checkIcon} alt="check" /> Nakit akış tahminleri</li>
-            <li><img src={checkIcon} alt="check" /> Özel kategoriler</li>
-          </ul>
-
-          <button className={styles.btnPrimary}>Hemen Başla</button>
-        </div>
-
-        {/* Kurumsal Plan */}
-        <div className={styles.card}>
-          <h2>Kurumsal</h2>
-          <p className={styles.description}>Büyük şirketler için</p>
-          
-          <div className={styles.price}>
-            <span className={styles.amount}>Özel</span>
-            <span className={styles.period}>fiyat</span>
-          </div>
-
-          <ul className={styles.features}>
-            <li><img src={checkIcon} alt="check" /> Sınırsız kullanıcı</li>
-            <li><img src={checkIcon} alt="check" /> Tüm özellikler</li>
-            <li><img src={checkIcon} alt="check" /> 7/24 destek</li>
-            <li><img src={checkIcon} alt="check" /> Özel entegrasyonlar</li>
-            <li><img src={checkIcon} alt="check" /> Eğitim ve danışmanlık</li>
-            <li><img src={checkIcon} alt="check" /> Özel SLA</li>
-            <li><img src={checkIcon} alt="check" /> API erişimi</li>
-          </ul>
-
-          <button className={styles.btnSecondary}>Hemen Başla</button>
-        </div>
+        ))}
       </section>
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <p>Sorularınız mı var? Sizinle konuşmak isteriz.</p>
-        <button className={styles.btnContact}>İletişime Geçin</button>
+        <button className={styles.btnContact} onClick={goToContact}>İletişime Geçin</button>
       </section>
     </div>
   )
