@@ -8,19 +8,19 @@
 
 /* ===== Header ===== */
 .header {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto 56px;
 }
 
 .header h1 {
-  font-family: 'Gelica', serif;
-  font-size: 48px;
-  font-weight: 800;
+  font-family: 'Gelica', sans-serif;
+  font-size: 42px;
+  font-style: bold;
   color: #0a0a0a;
-  margin-bottom: 32px;
-  letter-spacing: -0.5px;
+  margin-bottom: 36px;
+  
 }
 
 /* ===== Toggle ===== */
@@ -47,7 +47,7 @@
 }
 
 .toggleLabel {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #9ca3af;
@@ -94,7 +94,7 @@
 }
 
 .discountBadge {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: #dc0005;
@@ -177,7 +177,7 @@
   color: white;
   padding: 7px 20px;
   border-radius: 999px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.1px;
@@ -186,7 +186,7 @@
 
 /* Card Title */
 .card h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: #0a0a0a;
@@ -196,7 +196,7 @@
 
 /* Card Description */
 .description {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: #6b7280;
@@ -217,7 +217,7 @@
 }
 
 .amount {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 48px;
   font-weight: 800;
   color: #0a0a0a;
@@ -226,7 +226,7 @@
 }
 
 .period {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #6b7280;
@@ -234,7 +234,7 @@
 }
 
 .billingNote {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: #9ca3af;
@@ -243,7 +243,7 @@
 }
 
 .originalPrice {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #d1d5db;
@@ -275,7 +275,7 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: #374151;
@@ -299,7 +299,7 @@
 .btnContact {
   padding: 15px 24px;
   border-radius: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -342,7 +342,7 @@
 }
 
 .ctaSection p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Gelica', 'Arial', sans-serif;
   font-size: 16px;
   color: #6b7280;
   margin-bottom: 24px;
