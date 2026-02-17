@@ -29,7 +29,7 @@ const Navbar = ({ onNavigate, currentPage }) => {
         </div>
 
         {/* Buttons */}
-        <div className={styles.buttons}>
+        <div className={`${styles.buttons} ${isOpen ? styles.open : ''}`}>
           <button 
             className={`${styles.navItem} ${currentPage === 'pricing' ? styles.active : ''}`}
             onClick={() => handleNavClick('pricing')}

@@ -140,17 +140,32 @@
   }
 
   .buttons {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
     flex-direction: column;
+    padding: var(--space-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     gap: var(--space-sm);
+    z-index: 99;
+  }
+
+  .buttons.open {
+    display: flex;
   }
 
   .primaryBtn {
     padding: 10px var(--space-md);
     font-size: var(--font-size-sm);
+    width: 100%;
+    text-align: center;
   }
 
-  .loginBtn {
-    padding: 10px var(--space-md);
-    font-size: var(--font-size-sm);
+  .navItem {
+    width: 100%;
+    text-align: center;
   }
 }
