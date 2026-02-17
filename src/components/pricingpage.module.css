@@ -148,9 +148,9 @@
 }
 
 .card.featured {
-  border: 2px solid #0a0a0a;
+  border: 1px solid #e5e7eb;
   transform: scale(1.04);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.08);
   z-index: 2;
   padding-top: 46px;
   max-width: 420px;
