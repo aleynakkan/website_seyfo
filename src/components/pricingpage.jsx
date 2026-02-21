@@ -96,7 +96,7 @@ export default function PricingPage({ onNavigate }) {
                   </div>
                   <p className={styles.billingNote}>
                     {isYearly
-                      ? `Aylık ${plan.monthlyPrice}₺ yerine ${getPrice(plan.monthlyPrice)}₺ olarak faturalandırılır`
+                      ? `Yıllık ${getPrice(plan.monthlyPrice) * 12}₺ tek seferde faturalandırılır. (${getPrice(plan.monthlyPrice)}₺ /ay)`
                       : `Aylık ${plan.monthlyPrice}₺ olarak faturalandırılır`}
                   </p>
                   {isYearly && (
