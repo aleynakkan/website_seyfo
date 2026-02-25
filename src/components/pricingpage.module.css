@@ -2,6 +2,9 @@
 .pricingPage {
   width: 100%;
   background-color: #f8f7f5;
+  background-size: cover;
+  background-position: center 1px;
+  background-repeat: no-repeat;
   min-height: 100vh;
   padding: 80px 40px 60px;
 }

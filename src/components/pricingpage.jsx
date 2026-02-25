@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './pricingpage.module.css'
+import pricing_background from '../assets/landing/pricing_background.svg'
 
 const plans = [
   
@@ -51,7 +52,11 @@ export default function PricingPage({ onNavigate }) {
   }
 
   return (
-    <div className={styles.pricingPage} id="pricing">
+    <div
+      className={styles.pricingPage}
+      id="pricing"
+      style={{ backgroundImage: `url(${pricing_background})` }}
+    >
       {/* Header */}
       <section className={styles.header}>
         <h1>Size uygun planı seçin</h1>
