@@ -87,7 +87,7 @@ export default function PricingPage({ onNavigate }) {
             key={plan.id}
             className={`${styles.card} ${plan.featured ? styles.featured : ''} ${selectedPlan === plan.id ? styles.selected : ''}`}
           >
-            {plan.featured && <div className={styles.badge}>En Popüler</div>}
+            {plan.featured && isYearly && <div className={styles.badge}>En Popüler</div>}
 
             <h2>{plan.name}</h2>
             <p className={styles.description}>{plan.description}</p>

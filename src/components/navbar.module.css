@@ -98,6 +98,14 @@
   background-color: #a60004;
 }
 
+.primaryBtnBlack {
+  background-color: #000000;
+}
+
+.primaryBtnBlack:hover {
+  background-color: #333333;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

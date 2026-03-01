@@ -36,7 +36,7 @@ const Navbar = ({ onNavigate, currentPage }) => {
           >
             Fiyatlar
           </button>
-          <button className={styles.primaryBtn} onClick={() => handleNavClick('contact')}>Ücretsiz Deneyin</button>
+          <button className={`${styles.primaryBtn} ${currentPage === 'pricing' ? styles.primaryBtnBlack : ''}`} onClick={() => handleNavClick('contact')}>Ücretsiz Deneyin</button>
         </div>
 
         {/* Mobile Menu Toggle */}

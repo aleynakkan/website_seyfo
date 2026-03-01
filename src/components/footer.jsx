@@ -7,7 +7,7 @@ import linkedin from '../assets/footer/linkedin.svg'
 import youtube from '../assets/footer/youtube.svg'
 import instagram from '../assets/footer/instagram.svg'
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
@@ -24,8 +24,8 @@ export default function Footer() {
         <nav className={styles.nav} aria-label="Alt menü">
           <a href="#features">Özellikler</a>
           <a href="#how-it-works">Nasıl Çalışır</a>
-          <a href="#pricing">Fiyatlandırma</a>
-          <a href="/contact" className={styles.navLink}>İletişim</a>
+          <a href="#pricing" onClick={(e) => { e.preventDefault(); onNavigate('pricing') }}>Fiyatlandırma</a>
+          <a href="/contact" className={styles.navLink} onClick={(e) => { e.preventDefault(); onNavigate('contact') }}>İletişim</a>
 
         </nav>
 

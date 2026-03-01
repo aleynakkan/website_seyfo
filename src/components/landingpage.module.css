@@ -1,8 +1,19 @@
 /* Landing Page Root */
 .landingPage {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   background-color: #ffffff;
   min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08),
+              0 0 60px rgba(0, 0, 0, 0.04);
+}
+
+/* Reusable Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
 }
 
 /* =========================
@@ -75,8 +86,9 @@
 .heroContent {
   position: relative;
   z-index: 1;
-  max-width: 1602px;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: row;             /* ✅ iki sütun */
@@ -85,7 +97,7 @@
   gap: 20px;                       /* aralık */
 
   /* küçük iç boşluk: görseldeki ferahlık */
-  padding: 20px 20px;
+  padding: 20px 24px;
 }
 
 .heroTextWrapper {
@@ -214,22 +226,24 @@
 
 .eclipseHero {
   display: block;
+  width: 100%;
   height: auto;
-  margin: -115px 0 0 calc(-50vw + 50%);
-  padding: 0;
+margin-top: -40px;
+  
   object-fit: cover;
   position: relative;
   z-index: 5;
-  transform: translateX(10px);
 }
 
 /* =========================
    FEATURES
    ========================= */
 .features {
-  padding: 60px 63px 100px;
+  padding: 60px 24px 100px;
   background-color: #ffffff;
   overflow: visible;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .sectionTitle {
@@ -250,7 +264,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18.055px;
-  max-width: 1570px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -473,8 +487,10 @@
    HOW IT WORKS (Accordion)
    ========================= */
 .howItWorks {
-  padding: 40px 64px 100px;
-  }
+  padding: 40px 24px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .howItWorksHeader {
   margin-bottom: 40px;
@@ -487,10 +503,11 @@
   line-height: 49.667px;
   color: #000000;
   margin: 0;
+  text-align: left;
 }
 
 .stepsWrapper {
-  max-width: 1570px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -604,8 +621,13 @@
    ========================= */
 .ctaSection {
   background-color: #dc0005;
-  padding: 128px 425px;
+  padding: 128px 24px;
   overflow: hidden;
+}
+
+.ctaSection .ctaContent {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .ctaContent {
@@ -728,7 +750,7 @@
   }
 
   .features {
-    padding: 80px 40px;
+    padding: 80px 24px;
   }
 
   .featureGrid {
@@ -743,7 +765,7 @@
   }
 
   .howItWorks {
-    padding: 60px 40px;
+    padding: 60px 24px;
   }
 
   .stepsAndDemo {
@@ -757,7 +779,7 @@
   }
 
   .ctaSection {
-    padding: 80px 60px;
+    padding: 80px 24px;
   }
 
   .ctaHeading {
@@ -809,7 +831,7 @@
   }
 
   .features {
-    padding: 60px 20px;
+    padding: 60px 16px;
   }
 
   .sectionTitle {
@@ -840,7 +862,7 @@
   }
 
   .howItWorks {
-    padding: 60px 20px;
+    padding: 60px 16px;
   }
 
   .howItWorksSubtitle {
@@ -877,7 +899,7 @@
   }
 
   .ctaSection {
-    padding: 60px 20px;
+    padding: 60px 16px;
   }
 
   .ctaHeading {
