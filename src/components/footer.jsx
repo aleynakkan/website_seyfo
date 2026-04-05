@@ -22,8 +22,8 @@ export default function Footer({ onNavigate }) {
 
         {/* Kısa linkler */}
         <nav className={styles.nav} aria-label="Alt menü">
-          <a href="#features">Özellikler</a>
-          <a href="#how-it-works">Nasıl Çalışır</a>
+          <a href="#features-heading" onClick={(e) => { e.preventDefault(); onNavigate('home', 'features-heading') }}>Özellikler</a>
+          <a href="#how-it-works-heading" onClick={(e) => { e.preventDefault(); onNavigate('home', 'how-it-works-heading') }}>Nasıl Çalışır</a>
           <a href="#pricing" onClick={(e) => { e.preventDefault(); onNavigate('pricing') }}>Fiyatlandırma</a>
           <a href="/contact" className={styles.navLink} onClick={(e) => { e.preventDefault(); onNavigate('contact') }}>İletişim</a>
 
@@ -31,7 +31,6 @@ export default function Footer({ onNavigate }) {
 
         {/* Sosyal ikonlar */}
         <div className={styles.social} aria-label="Sosyal bağlantılar">
-          <a href="#" aria-label="Twitter"><img src={twitter} alt="Twitter" /></a>
           <a href="https://www.linkedin.com/company/cfo-seyfo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" /></a>
           <a href="https://www.instagram.com/cfoseyfo?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src={instagram} alt="Instagram" /></a>
           <a href="#" aria-label="YouTube"><img src={youtube} alt="YouTube" /></a>

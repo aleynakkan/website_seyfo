@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react' // <--- useEffect buraya eklendi
+import { useState, useEffect } from 'react'
 import Navbar from './components/navbar'
 import Footer from './components/footer'
 import LandingPage from './components/landingpage'
@@ -12,11 +12,25 @@ import myfavicon from './assets/landing/logoonly.png'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [pendingSectionId, setPendingSectionId] = useState(null)
 
-  const handleNavigation = (page) => {
+  const handleNavigation = (page, sectionId = null) => {
     setCurrentPage(page)
+    setPendingSectionId(sectionId)
     window.scrollTo(0, 0)
   }
+
+  useEffect(() => {
+    if (currentPage !== 'home' || !pendingSectionId) {
+      return
+    }
+
+    const targetElement = document.getElementById(pendingSectionId)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setPendingSectionId(null)
+    }
+  }, [currentPage, pendingSectionId])
 
   useEffect(() => {
     // Mevcut favicon link elementini bul veya oluştur
