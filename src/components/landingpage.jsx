@@ -52,7 +52,7 @@ export default function LandingPage({ onNavigate }) {
       <section className={styles.hero} role="banner">
         <img src={dene} alt="arkaplan" className={styles.heroBackground} aria-hidden="true" />
         
-        <div className={styles.heroContent}>
+        <div className={`${styles.container} ${styles.heroContent}`}>
           <div className={styles.heroTextWrapper}>
             <div className={styles.headingWrapper}>
               <h1 className={styles.mainHeading}>
@@ -83,86 +83,85 @@ export default function LandingPage({ onNavigate }) {
 
       {/* Features Section */}
       <section className={styles.features} aria-labelledby="features-heading">
-        
-        <h2 id="features-heading" className={styles.sectionTitle}>
-          <span className={styles.titleAccent}>Seyfo</span> ile neler yapabilirsiniz?
-        </h2>
-        
-        <div className={styles.featureGrid}>
-          <article className={styles.featureCard}>
-            
-              
-           
-            <h3 className={styles.featureTitle}>
-              <b>Nakit akışını netleştirir.</b> <br/>
-              Gelir ve giderlerini tek yerden görür, bütçeni kolayca kontrol edersin.
-            </h3>
-          </article>
+        <div className={styles.container}>
+          <h2 id="features-heading" className={styles.sectionTitle}>
+            <span className={styles.titleAccent}>Seyfo</span> ile neler yapabilirsiniz?
+          </h2>
 
-          <article className={styles.featureCard}>
-                       <h3 className={styles.featureTitle}>
-              <b>Finansal riskleri önceden gösterir.</b> <br/>
-              Önümüzdeki 30-60-90 gün içinde nakit durumunu önceden bilirsin.
-            </h3>
-          </article>
-          <article className={styles.featureCard}>
-                       <h3 className={styles.featureTitle}>
-              <b>Finansal durumu iş diliyle özetler.</b> <br/>
-              Karmaşık muhasebe terimleriyle değil, basitleştirilmiş gündelik iş diliyle rapor alırsın.
-            </h3>
-          </article>
+          <div className={styles.featureGrid}>
+            <article className={styles.featureCard}>
+              <h3 className={styles.featureTitle}>
+                <b>Nakit akışını netleştirir.</b> <br/>
+                Gelir ve giderlerini tek yerden görür, bütçeni kolayca kontrol edersin.
+              </h3>
+            </article>
+
+            <article className={styles.featureCard}>
+              <h3 className={styles.featureTitle}>
+                <b>Finansal riskleri önceden gösterir.</b> <br/>
+                Önümüzdeki 30-60-90 gün içinde nakit durumunu önceden bilirsin.
+              </h3>
+            </article>
+            <article className={styles.featureCard}>
+              <h3 className={styles.featureTitle}>
+                <b>Finansal durumu iş diliyle özetler.</b> <br/>
+                Karmaşık muhasebe terimleriyle değil, basitleştirilmiş gündelik iş diliyle rapor alırsın.
+              </h3>
+            </article>
+          </div>
         </div>
-        
-        </section>
+
+      </section>
         <img src={sayfasonukesik} alt="sayfa sonu görseli" className={styles.pageEndImage} aria-hidden="true" />
         
 
       {/* How It Works Section */}
       <section className={styles.howItWorks} aria-labelledby="how-it-works-heading">
-        
-        <div className={styles.howItWorksHeader}>
-          <h2 id="how-it-works-heading" className={styles.sectionTitle}>
-            <span className={styles.titleAccent}>Seyfo</span> nasıl çalışır?
-          </h2>
-          <p className={styles.howItWorksSubtitle}>
-            Kurulum yok. ERP şart değil. Excel yükler gibi başla! Sonrasında otomatize edilebilir banka entegrasyonu ile devam et.
-          </p>
-        </div>
+        <div className={styles.container}>
+          <div className={styles.howItWorksHeader}>
+            <h2 id="how-it-works-heading" className={styles.sectionTitle}>
+              <span className={styles.titleAccent}>Seyfo</span> nasıl çalışır?
+            </h2>
+            <p className={styles.howItWorksSubtitle}>
+              Kurulum yok. ERP şart değil. Excel yükler gibi başla! Sonrasında otomatize edilebilir banka entegrasyonu ile devam et.
+            </p>
+          </div>
 
-        <div className={styles.stepsWrapper}>
-          <div className={styles.stepsAndDemo}>
-            <div className={styles.stepsColumn} role="list">
-              {steps.map((step, idx) => {
-                const expanded = activeStep === idx
-                return (
-                  <div key={idx} className={styles.stepRow} role="listitem">
-                    <button
-                      className={styles.stepItem}
-                      aria-expanded={expanded}
-                      onClick={() => toggleStep(idx)}
-                      type="button"
-                    >
-                      <h3 className={styles.stepTitle}>{step.title}</h3>
-                      <img src={plusicon} alt="Daha fazla" className={styles.stepIcon} />
-                    </button>
+          <div className={styles.stepsWrapper}>
+            <div className={styles.stepsAndDemo}>
+              <div className={styles.stepsColumn} role="list">
+                {steps.map((step, idx) => {
+                  const expanded = activeStep === idx
+                  return (
+                    <div key={idx} className={styles.stepRow} role="listitem">
+                      <button
+                        className={styles.stepItem}
+                        aria-expanded={expanded}
+                        onClick={() => toggleStep(idx)}
+                        type="button"
+                      >
+                        <h3 className={styles.stepTitle}>{step.title}</h3>
+                        <img src={plusicon} alt="Daha fazla" className={styles.stepIcon} />
+                      </button>
 
-                    {expanded && (
-                      <div className={styles.stepPanel}>
-                        <p className={styles.stepDescription}>{step.description}</p>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
+                      {expanded && (
+                        <div className={styles.stepPanel}>
+                          <p className={styles.stepDescription}>{step.description}</p>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
 
-            <div className={styles.demoImageWrapper}>
-              <img
-                src={imgScreenshot}
-                alt="Seyfo uygulama demosu"
-                className={styles.demoImage}
-                loading="lazy"
-              />
+              <div className={styles.demoImageWrapper}>
+                <img
+                  src={imgScreenshot}
+                  alt="Seyfo uygulama demosu"
+                  className={styles.demoImage}
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -170,22 +169,24 @@ export default function LandingPage({ onNavigate }) {
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
-        <div className={styles.ctaContent}>
-          <h2 className={styles.ctaHeading}>
-            14 gün boyunca <span className={styles.ctaHighlight}>ücretsiz</span> deneyin!
-          </h2>
-          <p className={styles.ctaDescription}>
-            Kredi kartı gerekmeden hemen başlayın.
-          </p>
-          <form className={styles.emailForm} onSubmit={handleEmailSubmit}>
-            <button 
-                type="button" 
-                className={styles.ctaButton} 
-                onClick={() => onNavigate('contact')}
-            >
-              Ücretsiz Deneyin
-            </button>
-          </form>
+        <div className={styles.container}>
+          <div className={styles.ctaContent}>
+            <h2 className={styles.ctaHeading}>
+              14 gün boyunca <span className={styles.ctaHighlight}>ücretsiz</span> deneyin!
+            </h2>
+            <p className={styles.ctaDescription}>
+              Kredi kartı gerekmeden hemen başlayın.
+            </p>
+            <form className={styles.emailForm} onSubmit={handleEmailSubmit}>
+              <button 
+                  type="button" 
+                  className={styles.ctaButton} 
+                  onClick={() => onNavigate('contact')}
+              >
+                Ücretsiz Deneyin
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </div>

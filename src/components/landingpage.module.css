@@ -1,11 +1,9 @@
 /* Landing Page Root */
 .landingPage {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   background-color: #ffffff;
   min-height: 100vh;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08),
-              0 0 60px rgba(0, 0, 0, 0.04);
+  overflow-x: clip;
 }
 
 /* Reusable Container */
@@ -14,18 +12,19 @@
   margin: 0 auto;
   padding: 0 24px;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 /* =========================
    HERO
    ========================= */
 .hero {
-  align-items: flex-start;
   position: relative;
   background-color: #f8f7f5;
   min-height: 700px;
   overflow: hidden;
-  padding: 96px 63px 72px;
+  padding: 96px 0 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,18 +85,14 @@
 .heroContent {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
 
   display: flex;
-  flex-direction: row;             /* ✅ iki sütun */
-  align-items: left;             /* ✅ dikey hizalama */
-  justify-content: space-between;  /* ✅ solda text, sağda görsel */
-  gap: 20px;                       /* aralık */
-
-  /* küçük iç boşluk: görseldeki ferahlık */
-  padding: 20px 24px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
 }
 
 .heroTextWrapper {
@@ -170,8 +165,8 @@
 .ctaButtons {
   display: flex;
   gap: 10px;
-  align-items: left;
-  justify-content: left;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
 
 }
@@ -226,10 +221,9 @@
 
 .eclipseHero {
   display: block;
-  width: 100%;
+  width: min(100%, 1600px);
   height: auto;
-margin-top: -40px;
-  
+  margin: -48px auto 0;
   object-fit: cover;
   position: relative;
   z-index: 5;
@@ -239,11 +233,9 @@ margin-top: -40px;
    FEATURES
    ========================= */
 .features {
-  padding: 60px 24px 100px;
+  padding: 60px 0 100px;
   background-color: #ffffff;
   overflow: visible;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .sectionTitle {
@@ -474,22 +466,18 @@ margin-top: -40px;
 }
 
 .pageEndImage {
-  width: calc(100% + 300px);
-  margin-left: -150px;
-  margin-right: -150px;
+  width: min(100%, 1600px);
+  margin: 0 auto;
   margin-bottom: 100px;
   display: block;
   object-fit: cover;
-  transform: translateX(150px);
 }
 
 /* =========================
    HOW IT WORKS (Accordion)
    ========================= */
 .howItWorks {
-  padding: 40px 24px 100px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 40px 0 100px;
 }
 
 .howItWorksHeader {
@@ -621,13 +609,8 @@ margin-top: -40px;
    ========================= */
 .ctaSection {
   background-color: #dc0005;
-  padding: 128px 24px;
+  padding: 128px 0;
   overflow: hidden;
-}
-
-.ctaSection .ctaContent {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .ctaContent {
@@ -727,7 +710,7 @@ margin-top: -40px;
 /* Tablet (768px - 1199px) */
 @media (max-width: 1199px) {
   .hero {
-    padding: 80px 40px;
+    padding: 80px 0;
     min-height: 700px;
   }
 
@@ -750,7 +733,7 @@ margin-top: -40px;
   }
 
   .features {
-    padding: 80px 24px;
+    padding: 80px 0;
   }
 
   .featureGrid {
@@ -765,7 +748,7 @@ margin-top: -40px;
   }
 
   .howItWorks {
-    padding: 60px 24px;
+    padding: 60px 0;
   }
 
   .stepsAndDemo {
@@ -779,7 +762,7 @@ margin-top: -40px;
   }
 
   .ctaSection {
-    padding: 80px 24px;
+    padding: 80px 0;
   }
 
   .ctaHeading {
@@ -796,11 +779,12 @@ margin-top: -40px;
 /* Mobile (<768px) */
 @media (max-width: 767px) {
   .hero {
-    padding: 60px 20px;
+    padding: 60px 0;
     min-height: auto;
   }
 
   .heroContent {
+    padding: 0;
     gap: 20px;
   }
 
@@ -831,7 +815,7 @@ margin-top: -40px;
   }
 
   .features {
-    padding: 60px 16px;
+    padding: 60px 0;
   }
 
   .sectionTitle {
@@ -862,7 +846,7 @@ margin-top: -40px;
   }
 
   .howItWorks {
-    padding: 60px 16px;
+    padding: 60px 0;
   }
 
   .howItWorksSubtitle {
@@ -899,7 +883,11 @@ margin-top: -40px;
   }
 
   .ctaSection {
-    padding: 60px 16px;
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 16px;
   }
 
   .ctaHeading {

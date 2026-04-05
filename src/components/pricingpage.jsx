@@ -8,7 +8,7 @@ const plans = [
     id: 'profesyonel',
     name: 'Profesyonel Plan',
     description: 'Büyüyen işletmeler için',
-    monthlyPrice: 1000,
+    monthlyPrice: 2000,
     features: [
       '30 Günlük Nakit Tahmini',
       'Gider Analizi ve Hatalı Gider Tespiti',
